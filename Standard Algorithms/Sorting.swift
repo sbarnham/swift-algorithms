@@ -31,21 +31,24 @@ class Sorting {
     }
     func merge(left: [Int], right: [Int]) -> [Int] {
         var result = [Int]()
-        var i = 0
-        var j = 0
-        while left.count >= 0 || right.count >= 0 {
-            if left[i] < right[j] {
+        var left = left
+        var right = right
+        let i = 0
+        while left.count > 0 && right.count > 0 {
+            if left[i] < right[i] {
                 result.append(left[i])
-                left.dropFirst(1)
+                let slice = left.dropFirst(1)
+                left = Array(slice)
             } else {
-                result.append(right[j])
-                right.dropFirst(1)
+                result.append(right[i])
+                let slice = right.dropFirst(1)
+                right = Array(slice)
             }
         }
         if left.count == 0 {
-            result.append(contentsOf: right[i...right.count])
+            result.append(contentsOf: right[i...right.count-1])
         } else {
-            result.append(contentsOf: left[j...left.count])
+            result.append(contentsOf: left[i...left.count-1])
         }
         return result
     }
