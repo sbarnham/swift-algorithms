@@ -8,14 +8,3 @@
 
 import Foundation
 
-print("Hello, World!")
-
-let name = "Sam"
-print(name)
-
-var i = 1
-while i != 20 {
-    i = i + 1
-    print(i)
-}
-

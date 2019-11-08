@@ -32,5 +32,29 @@ class Sorting_Test: XCTestCase {
         
     }
     
+    func testMergeWith2SortedArraysReturns1SortedArray() {
+        //arrange
+        let data = [1,3,5]
+        let data2 = [2,6,10]
+        let sorting = Sorting()
+        //act
+        let actual = sorting.merge(left: data, right: data2)
+        //assert
+        XCTAssertEqual(actual, [1,2,3,5,6,10])
+    }
+    
+    func testMergeSortWithIntegerArrayReturnsSortedArray() {
+        //arrange
+        let data = [6, 3, 4, 5]
+        let expected = [3, 4, 5, 6]
+        let sorting = Sorting()
+        //act
+        let actual = sorting.mergeSort(data: data)
+        //assert
+        XCTAssertEqual(actual, expected)
+        
+    }
+    
+    
 
 }
