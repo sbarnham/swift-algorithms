@@ -73,4 +73,82 @@ class Sorting {
 
 
 }
+    
+    func linearSearch(data: [Int]) -> Int {
+        var itemFound = 0
+        print("Enter number")
+        let searchItem = 4
+          var i = 0
+          while i != data.count {
+            if data[i] == searchItem {
+              itemFound = i
+              return itemFound
+            } else {
+              i = i + 1
+            }
+          }
+        return itemFound
+        }
+    func binarySearch(data: [Int]) -> Int {
+        var itemFound = 0
+        print("Enter number")
+        let searchItem = 4
+        var lowerBound = 0
+        var midPoint = 0
+        var upperBound = data.count - 1
+        while itemFound == 0 && lowerBound <= upperBound {
+            midPoint = (lowerBound + upperBound)/2
+            if data[midPoint] == searchItem {
+                itemFound = midPoint
+                return itemFound
+            } else if data[midPoint] < searchItem {
+                lowerBound = midPoint + 1
+            } else {
+                upperBound = midPoint - 1
+            }
+        }
+        return itemFound
+    }
+    
+    func quickSort(data: [Int]) -> [Int] {
+        if data.count <= 1 {
+            return data
+        } else {
+            let pivot = data[0]
+            var left = [Int]()
+            var right = [Int]()
+
+            for i in 1..<data.count {
+                let item = data[i]
+                if item < pivot {
+                    left.append(item)
+                } else {
+                    right.append(item)
+                }
+            }
+
+            var sortedData = [Int]()
+            sortedData.append(contentsOf: quickSort(data: left))
+            sortedData.append(pivot)
+            sortedData.append(contentsOf: quickSort(data: right))
+            return sortedData
+        }
+
+}
+    func insertionSort(data: [Int]) -> [Int] {
+        var data = data
+        for i in 1 ..< data.count {
+            let temp = data[i]
+            var j = i - 1
+            
+            while j >= 0 && data[j] > temp {
+                data[j+1] = data[j]
+                j = j - 1
+            }
+            
+            data[j+1] = temp
+        }
+    return data
+    }
+        
 }

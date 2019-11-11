@@ -55,6 +55,50 @@ class Sorting_Test: XCTestCase {
         
     }
     
+    func testLinearSearchWithIntegerArrayReturnsGivenValue() {
+        //arrange
+        let data = [6, 3, 4, 5]
+        let expected = 2
+        let sorting = Sorting()
+        //act
+        let actual = sorting.linearSearch(data: data)
+        //assert
+        XCTAssertEqual(actual, expected)
+        
+    }
     
+    func testBinarySearchWithIntegerArrayReturnsGivenValue() {
+        //arrange
+        let data = [6, 3, 4, 5, 7, 1, 2, 9, 8]
+        let expected = 2
+        let sorting = Sorting()
+        //act
+        let actual = sorting.binarySearch(data: data)
+        //assert
+        XCTAssertEqual(actual, expected)
+    }
 
+    func testQuickSortWithIntegerArrayReturnsSortedArray() {
+        //arrange
+        let data = [6, 3, 4, 5]
+        let expected = [3, 4, 5, 6]
+        let sorting = Sorting()
+        //act
+        let actual = sorting.quickSort(data: data)
+        //assert
+        XCTAssertEqual(actual, expected)
+        
+    }
+    
+    func testInsertionSortWithIntegerArrayReturnsSortedArray() {
+        //arrange
+        let data = [6, 3, 4, 5]
+        let expected = [3, 4, 5, 6]
+        let sorting = Sorting()
+        //act
+        let actual = sorting.insertionSort(data: data)
+        //assert
+        XCTAssertEqual(actual, expected)
+    }
+    
 }
