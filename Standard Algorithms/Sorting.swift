@@ -74,33 +74,27 @@ class Sorting {
 
 }
     
-    func linearSearch(data: [Int]) -> Int {
+    func linearSearch(data: [Int], searchItem: Int) -> Int {
         var itemFound = 0
-        print("Enter number")
-        let searchItem = 4
-          var i = 0
-          while i != data.count {
-            if data[i] == searchItem {
-              itemFound = i
-              return itemFound
-            } else {
-              i = i + 1
-            }
-          }
-        return itemFound
+        var i = 0
+        while i != data.count {
+        if data[i] == searchItem {
+          return data[i]
+        } else {
+          i = i + 1
         }
-    func binarySearch(data: [Int]) -> Int {
+      }
+    return itemFound
+    }
+    func binarySearch(data: [Int], searchItem: Int) -> Int {
         var itemFound = 0
-        print("Enter number")
-        let searchItem = 4
         var lowerBound = 0
         var midPoint = 0
         var upperBound = data.count - 1
         while itemFound == 0 && lowerBound <= upperBound {
             midPoint = (lowerBound + upperBound)/2
             if data[midPoint] == searchItem {
-                itemFound = midPoint
-                return itemFound
+                return data[midPoint]
             } else if data[midPoint] < searchItem {
                 lowerBound = midPoint + 1
             } else {

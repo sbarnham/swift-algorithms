@@ -32,6 +32,54 @@ class Sorting_Test: XCTestCase {
         
     }
     
+    func testBubbleSortPerformanceWithArraySize5() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 5 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        //act
+        measure {
+            sorting.bubbleSort(data: data)
+        }
+        
+    }
+    
+    func testBubbleSortPerformanceWithArraySize50() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 50 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        //act
+        measure {
+            sorting.bubbleSort(data: data)
+        }
+            
+        }
+    
+    func testBubbleSortPerformanceWithArraySize500() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 500 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        //act
+        measure {
+            sorting.bubbleSort(data: data)
+        }
+            
+        }
+        
     func testMergeWith2SortedArraysReturns1SortedArray() {
         //arrange
         let data = [1,3,5]
@@ -55,28 +103,178 @@ class Sorting_Test: XCTestCase {
         
     }
     
+    func testMergeSortPerformanceWithArraySize5() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 5 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        //act
+        measure {
+            sorting.mergeSort(data: data)
+        }
+        
+    }
+    
+    func testMergeSortPerformanceWithArraySize50() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 50 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        //act
+        measure {
+            sorting.mergeSort(data: data)
+        }
+            
+        }
+    
+    func testMergeSortPerformanceWithArraySize500() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 500 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        //act
+        measure {
+            sorting.mergeSort(data: data)
+        }
+            
+        }
+    
     func testLinearSearchWithIntegerArrayReturnsGivenValue() {
         //arrange
         let data = [6, 3, 4, 5]
-        let expected = 2
+        let expected = data[Int.random(in: 1..<data.count)]
         let sorting = Sorting()
         //act
-        let actual = sorting.linearSearch(data: data)
+        let actual = sorting.linearSearch(data: data, searchItem: expected)
         //assert
         XCTAssertEqual(actual, expected)
         
     }
     
+    func testLinearSearchPerformanceWithArraySize5() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 5 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        let expected = data[Int.random(in: 1..<data.count)]
+        //act
+        measure {
+            sorting.linearSearch(data: data, searchItem: expected)
+        }
+        
+    }
+    
+    func testLinearSearchPerformanceWithArraySize50() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 50 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        let expected = data[Int.random(in: 1..<data.count)]
+        //act
+        measure {
+            sorting.linearSearch(data: data, searchItem: expected)
+        }
+            
+        }
+    
+    func testLinearSearchPerformanceWithArraySize500() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 500 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        let expected = data[Int.random(in: 1..<data.count)]
+        //act
+        measure {
+            sorting.linearSearch(data: data, searchItem: expected)
+        }
+            
+        }
+    
     func testBinarySearchWithIntegerArrayReturnsGivenValue() {
         //arrange
         let data = [6, 3, 4, 5, 7, 1, 2, 9, 8]
-        let expected = 2
+        let expected = data[Int.random(in: 1..<data.count)]
         let sorting = Sorting()
         //act
-        let actual = sorting.binarySearch(data: data)
+        let actual = sorting.binarySearch(data: data, searchItem: expected)
         //assert
         XCTAssertEqual(actual, expected)
     }
+    
+    func testBinarySearchPerformanceWithArraySize5() {
+         //arrange
+         let sorting = Sorting()
+         var data = [Int]()
+         var i = 0
+         while i < 5 {
+             data.append(Int.random(in: 1...1000))
+             i = i + 1
+         }
+         let expected = data[Int.random(in: 1..<data.count)]
+         //act
+         measure {
+             sorting.binarySearch(data: data, searchItem: expected)
+         }
+         
+     }
+     
+     func testBinarySearchPerformanceWithArraySize50() {
+         //arrange
+         let sorting = Sorting()
+         var data = [Int]()
+         var i = 0
+         while i < 50 {
+             data.append(Int.random(in: 1...1000))
+             i = i + 1
+         }
+         let expected = data[Int.random(in: 1..<data.count)]
+         //act
+         measure {
+             sorting.binarySearch(data: data, searchItem: expected)
+         }
+             
+         }
+     
+     func testBinarySearchPerformanceWithArraySize500() {
+         //arrange
+         let sorting = Sorting()
+         var data = [Int]()
+         var i = 0
+         while i < 500 {
+             data.append(Int.random(in: 1...1000))
+             i = i + 1
+         }
+         let expected = data[Int.random(in: 1..<data.count)]
+         //act
+         measure {
+             sorting.binarySearch(data: data, searchItem: expected)
+         }
+             
+         }
 
     func testQuickSortWithIntegerArrayReturnsSortedArray() {
         //arrange
@@ -90,6 +288,54 @@ class Sorting_Test: XCTestCase {
         
     }
     
+    func testQuickSortPerformanceWithArraySize5() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 5 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        //act
+        measure {
+            sorting.quickSort(data: data)
+        }
+        
+    }
+    
+    func testQuickSortPerformanceWithArraySize50() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 50 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        //act
+        measure {
+            sorting.quickSort(data: data)
+        }
+            
+        }
+    
+    func testQuickSortPerformanceWithArraySize500() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 500 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        //act
+        measure {
+            sorting.quickSort(data: data)
+        }
+            
+        }
+    
     func testInsertionSortWithIntegerArrayReturnsSortedArray() {
         //arrange
         let data = [6, 3, 4, 5]
@@ -102,3 +348,50 @@ class Sorting_Test: XCTestCase {
     }
     
 }
+    func testInsertionSortPerformanceWithArraySize5() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 5 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        //act
+        measure {
+            sorting.insertionSort(data: data)
+        }
+        
+    }
+
+    func testInsertionSortPerformanceWithArraySize50() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 50 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        //act
+        measure {
+            sorting.insertionSort(data: data)
+        }
+            
+        }
+
+    func testInsertionSortPerformanceWithArraySize500() {
+        //arrange
+        let sorting = Sorting()
+        var data = [Int]()
+        var i = 0
+        while i < 500 {
+            data.append(Int.random(in: 1...1000))
+            i = i + 1
+        }
+        //act
+        measure {
+            sorting.insertionSort(data: data)
+        }
+            
+        }
