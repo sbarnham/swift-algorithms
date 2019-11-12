@@ -347,7 +347,6 @@ class Sorting_Test: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
     
-}
     func testInsertionSortPerformanceWithArraySize5() {
         //arrange
         let sorting = Sorting()
@@ -395,3 +394,4 @@ class Sorting_Test: XCTestCase {
         }
             
         }
+}

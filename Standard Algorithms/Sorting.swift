@@ -129,6 +129,7 @@ class Sorting {
         }
 
 }
+    
     func insertionSort(data: [Int]) -> [Int] {
         var data = data
         for i in 1 ..< data.count {
