@@ -45,8 +45,30 @@ class UnknownTest: XCTestCase {
     
     func testModeOfSortedArrayReturnsCorrectMode() {
         //arrange
-        let inputData = [1,2,2,2,3,3,3,3,4,5,7,9,10]
-        let expected = 3
+        let inputData = [1,2,2,2,3,3,3,3,4,5,5,5,5,5,7,9,10]
+        let expected = 5
+        let unknown = Unknown()
+        //act
+        let actual = unknown.modeOfSortedArray(data: inputData)
+        //assert
+        XCTAssertEqual(actual, expected)
+    }
+    
+    func testModeOfSortedArrayWithNoRepeatsReturns0() {
+        //arrange
+        let inputData = [1,2,3,4,5,6,7,8,9,10]
+        let expected = 0
+        let unknown = Unknown()
+        //act
+        let actual = unknown.modeOfSortedArray(data: inputData)
+        //assert
+        XCTAssertEqual(actual, expected)
+    }
+    
+    func testModeOfSingleElementArrayReturnsSingleElement() {
+        //arrange
+        let inputData = [20]
+        let expected = 20
         let unknown = Unknown()
         //act
         let actual = unknown.modeOfSortedArray(data: inputData)

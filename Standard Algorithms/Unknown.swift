@@ -22,17 +22,39 @@ class Unknown {
     }
     
     func modeOfSortedArray(data: [Int]) -> Int {
-        var mode = [Int]()
+        if data.count == 1 {
+            return data[0]
+        }
+        var modearray = [Int]()
+        var mode = 0
         var count = [Int]()
         var currentCount = 0
-        for i in 0 ..< data.count {
-            while data[i] == data[i+1] {
-                mode.append(i)
-                currentCount = currentCount + 1
-                var i = i + 1
+        var i = 0
+        while i < data.count-1 {
+            if data[i] == data[i+1] {
+                modearray.append(data[i])
+                currentCount = 1
+                while data[i] == data[i+1] {
+                    currentCount = currentCount + 1
+                    i = i + 1
+                }
+                count.append(currentCount)
+                currentCount = 0
+            }
+        i = i + 1
+        }
+        if count.count == 0 {
+            return mode
+        }
+        for i in 0 ..< count.count-1 {
+            if count[i] > count[i+1] {
+                mode = modearray[i]
+            } else {
+                mode = modearray[i+1]
             }
         }
-        var i = 0
+        return mode
+    }
+
         
     }
-}
